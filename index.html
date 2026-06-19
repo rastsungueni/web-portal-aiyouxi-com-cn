@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>爱游戏 · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fbfbfb;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+      color: #1e1e2a;
+      line-height: 1.7;
+      padding: 2rem 1.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* 标题层级 */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-top: 0.4rem;
+      margin-bottom: 0.1rem;
+      color: #1a1a28;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 450;
+      margin-top: 2.4rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid #dcdce0;
+      color: #2d2d3a;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-top: 1.5rem;
+      margin-bottom: 0.3rem;
+      color: #333340;
+    }
+
+    p {
+      margin-bottom: 1.1rem;
+      font-size: 1rem;
+    }
+
+    /* 链接 —— 非常克制的样式 */
+    a {
+      color: #3b4b6b;
+      text-decoration: underline;
+      text-underline-offset: 0.2rem;
+      text-decoration-thickness: 0.5px;
+      transition: color 0.1s;
+    }
+
+    a:hover {
+      color: #1f2a3f;
+      text-decoration-thickness: 1px;
+    }
+
+    /* 摘要卡片（极简留白版） */
+    .summary-zone {
+      background-color: #ffffff;
+      border: 1px solid #e4e4ea;
+      border-radius: 14px;
+      padding: 1.6rem 1.8rem;
+      margin: 1.8rem 0 1.5rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    .summary-zone p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 特点微型网格（两列，窄间隙） */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.2rem;
+      margin: 1rem 0 1.2rem;
+    }
+
+    .feature-item {
+      background: #f9f9fc;
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      border: 1px solid #ededf2;
+    }
+
+    .feature-item strong {
+      display: block;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+      color: #252535;
+    }
+
+    .feature-item span {
+      font-size: 0.9rem;
+      color: #4f4f60;
+    }
+
+    /* 场景列表（无符号, 留白分隔） */
+    .scene-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0 0.8rem;
+    }
+
+    .scene-list li {
+      padding: 0.65rem 0 0.65rem 0.8rem;
+      border-left: 2px solid #dedee4;
+      margin-bottom: 0.4rem;
+      padding-left: 1rem;
+      color: #2b2b38;
+    }
+
+    /* 提示区块（灰色底, 极简） */
+    .note-box {
+      background: #f4f4f8;
+      border-radius: 12px;
+      padding: 1.3rem 1.5rem;
+      margin: 1.8rem 0;
+      border: 1px solid #e8e8ee;
+    }
+
+    .note-box p {
+      margin-bottom: 0.45rem;
+      font-size: 0.95rem;
+    }
+
+    .note-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* faq 摘要样式（紧凑） */
+    .faq-mini {
+      margin: 0.8rem 0 1.5rem;
+    }
+
+    .faq-mini dt {
+      font-weight: 480;
+      margin-top: 0.9rem;
+      color: #1d1d2b;
+    }
+
+    .faq-mini dd {
+      margin-left: 0;
+      padding-left: 0.2rem;
+      color: #414152;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e2ea;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .footer-note {
+      color: #6a6a7a;
+      font-size: 0.85rem;
+      margin-top: 2rem;
+      border-top: 1px solid #eaeaf0;
+      padding-top: 1.2rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 480px) {
+      body {
+        padding: 1.2rem 1rem 3rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+      }
+
+      .summary-zone {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .note-box {
+        padding: 1rem 1.1rem;
+      }
+
+      .scene-list li {
+        padding-left: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 区 + 自然引入 -->
+  <h1>爱游戏 · 日常查询与延伸阅读</h1>
+  <p style="color: #5e5e70; margin-top: 0.2rem; font-size: 0.95rem;">一份关于产品定位与对照使用的简要说明</p>
+
+  <!-- 摘要式介绍 -->
+  <div class="summary-zone">
+    <p><strong>爱游戏</strong> 是一个围绕游戏信息聚合与内容查询而设计的 web 入口。日常中，我们常常需要快速对照某个作品的背景、版本变化或社区讨论，而一个相对集中、克制的信息起点能节省不少碎片时间。它不制造结论，只提供可延伸的线索。</p>
+    <p>你可以把它当作一个日常查询的辅助面板：当你在别处看到某个游戏名词、活动时间或平台简称，又不想立刻陷入深度检索时，<a href="https://web-portal-aiyouxi.com.cn">爱游戏</a> 或许能给你一个结构化的参照起点。它不替代任何官方公告或维基，而是让对照浏览更从容一些。</p>
+  </div>
+
+  <!-- 亮点：特征描述（产品说明角度） -->
+  <h2>几个值得留意的特征</h2>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <strong>条目式对照</strong>
+      <span>按条目组织信息，方便快速定位某款作品的发行细节或常用简称。</span>
+    </div>
+    <div class="feature-item">
+      <strong>轻量延伸</strong>
+      <span>页面内提供关联主题的摘要，避免在多个标签页间频繁跳转。</span>
+    </div>
+    <div class="feature-item">
+      <strong>低噪音排版</strong>
+      <span>减少装饰性元素，让文字本身成为主要阅读对象。</span>
+    </div>
+    <div class="feature-item">
+      <strong>渐进呈现</strong>
+      <span>内容按模块展开，你可以只阅读自己关心的段落。</span>
+    </div>
+  </div>
+
+  <!-- 使用建议 / 场景（日常查询、对照、延伸阅读） -->
+  <h2>使用场景举例</h2>
+  <ul class="scene-list">
+    <li><strong>查询基础信息：</strong> 偶尔想起某个几年前的作品，想确认它的发行年份或常用译名，爱游戏提供一个快速对照的框架。</li>
+    <li><strong>对照版本差异：</strong> 同一系列的不同作品或复刻版本，陈列在一起能直观看出细节变化。</li>
+    <li><strong>延伸阅读的起点：</strong> 每个条目附带相关的关键词或话题，方便你决定下一步搜索方向。</li>
+    <li><strong>日常浏览中的参照：</strong> 在看视频或文章时遇到陌生简称，切过来扫一眼，往往能对上号。</li>
+  </ul>
+
+  <!-- 可信但克制的提示 -->
+  <div class="note-box">
+    <p><strong>一点说明</strong><br>
+    爱游戏的内容来自公开信息与社区整理，并非官方发布。所有条目均可能随时间调整，建议你在做决策或引用时，交叉核对更权威的来源。这个页面本身不收集任何个人数据，也没有自动跳转或推广脚本。</p>
+    <p>如果你发现条目有误或缺失，可以通过常规渠道向维护者反馈。保持信息可追溯、可纠错，比追求即时更新更重要。</p>
+  </div>
+
+  <!-- FAQ 摘要（非完全问答，更像是常见困惑） -->
+  <h2>FAQ 摘要</h2>
+  <dl class="faq-mini">
+    <dt>这个页面收录了所有游戏吗？</dt>
+    <dd>不。它专注于常见作品和具有一定讨论度的条目，并非完整数据库。覆盖范围会逐渐调整，但永远做不到“全部”。</dd>
+    <dt>信息多久更新一次？</dt>
+    <dd>没有固定周期。重大版本或社区普遍关注的变化会优先更新，非热门条目可能长期不变。</dd>
+    <dt>我可以把这些内容转载到别处吗？</dt>
+    <dd>每一条信息都来自公开可查的来源，转载时建议注明出处，并保持内容不被断章取义。</dd>
+  </dl>
+
+  <hr>
+
+  <!-- 底部再嵌入一次链接（自然句） -->
+  <p style="font-size: 0.92rem; color: #3b3b4a;">如果你需要快速回到信息面板，随时可以打开 <a href="https://web-portal-aiyouxi.com.cn">爱游戏</a> 继续浏览。作为日常查询中的一个落脚点，它不承诺速度，只在乎清晰。</p>
+
+  <div class="footer-note">
+    <span>爱游戏 · 产品说明式介绍页 &nbsp;·&nbsp; 内容版本参考 2025</span>
+  </div>
+
+</div>
+</body>
+</html>

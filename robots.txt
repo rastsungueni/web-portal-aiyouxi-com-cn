@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rastsungueni.github.io/web-portal-aiyouxi-com-cn/sitemap.xml
