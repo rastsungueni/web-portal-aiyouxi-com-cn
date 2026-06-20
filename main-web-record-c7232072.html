@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>威廉希尔 · 稳定入口与页面导览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #fafaf9;
+            color: #1c1917;
+            line-height: 1.6;
+            padding: 0 1.25rem;
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2.5rem 0 4rem 0;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0 0.75rem 0;
+            border-bottom: 1px solid #e7e5e4;
+            margin-bottom: 2.5rem;
+        }
+
+        .brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.01em;
+            color: #44403c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            color: #57534e;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #292524;
+        }
+
+        /* hero 区 */
+        .hero {
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            color: #1c1917;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #57534e;
+            max-width: 620px;
+        }
+
+        /* 核心介绍段落 */
+        .intro-block {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e7e5e4;
+        }
+
+        .intro-block p {
+            margin-bottom: 1.25rem;
+            font-size: 0.98rem;
+            color: #3f3f46;
+        }
+
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-block a {
+            color: #1c1917;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #a8a29e;
+            font-weight: 500;
+            transition: text-decoration-color 0.2s;
+        }
+
+        .intro-block a:hover {
+            text-decoration-color: #1c1917;
+        }
+
+        /* 场景模块 — 三列卡片 */
+        .scenes {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2.5rem 0 3rem 0;
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border: 1px solid #e7e5e4;
+            border-radius: 12px;
+            padding: 1.5rem 1.75rem;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .scene-card:hover {
+            border-color: #d6d3d1;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .scene-card h3 {
+            font-size: 1.05rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+            color: #292524;
+        }
+
+        .scene-card p {
+            font-size: 0.92rem;
+            color: #57534e;
+            line-height: 1.55;
+        }
+
+        /* 常见说明摘要 */
+        .faq-summary {
+            margin: 2.5rem 0 1rem 0;
+            padding: 1.5rem 0 0 0;
+            border-top: 1px solid #e7e5e4;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.15rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            color: #1c1917;
+            margin-bottom: 1.25rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f0efed;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #292524;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .faq-answer a {
+            color: #1c1917;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #bcb7b2;
+            font-weight: 450;
+        }
+
+        .faq-answer a:hover {
+            text-decoration-color: #1c1917;
+        }
+
+        /* 提示区 (简洁) */
+        .note {
+            margin: 2.8rem 0 1.5rem 0;
+            padding: 1.25rem 0 0.5rem 0;
+            font-size: 0.88rem;
+            color: #78716c;
+            border-top: 1px solid #e7e5e4;
+        }
+
+        .note span {
+            background: #f0efed;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #57534e;
+        }
+
+        /* 页脚 */
+        .footer {
+            margin-top: 2rem;
+            padding: 1.5rem 0 0.5rem 0;
+            font-size: 0.78rem;
+            color: #a8a29e;
+            border-top: 1px solid #e7e5e4;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .footer a {
+            color: #78716c;
+            text-decoration: none;
+            border-bottom: 1px dotted #d6d3d1;
+        }
+
+        .footer a:hover {
+            color: #292524;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            .top-nav {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .scene-card {
+                padding: 1.25rem 1.25rem;
+            }
+
+            .faq-summary h2 {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .scenes {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.25rem;
+            }
+
+            .scene-card {
+                padding: 1.75rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+        <span class="brand">威廉希尔</span>
+        <ul class="nav-links">
+            <li><a href="#">概述</a></li>
+            <li><a href="#">场景</a></li>
+            <li><a href="#">说明</a></li>
+        </ul>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>稳定入口 · 页面导览</h1>
+        <p>从平台定位到使用场景，提供一份结构清晰、信息克制的参考说明。</p>
+    </div>
+
+    <!-- 核心介绍（包含链接） -->
+    <div class="intro-block">
+        <p><a href="https://main-web-williamhill.com">威廉希尔</a> 作为一个长期运营的信息服务站点，其页面结构围绕「稳定访问」与「内容可及性」展开。用户无需反复查找，即可通过固定入口进入核心界面。本次导览从三部分切入：平台概貌、常见使用场景以及基础问答，帮助新访客快速建立整体认知。</p>
+        <p>在长期维护中，站内导航保持了简洁的层级关系。无论是通过主域名直接访问，还是经由书签路径进入，均可获得一致的加载体验。下述三个场景模块分别对应不同需求类型，可视为该平台功能布局的缩影。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes">
+        <div class="scene-card">
+            <h3>信息检索场景</h3>
+            <p>通过分类目录与搜索入口，用户可以快速定位到历史数据、赛事统计或玩法说明。整个检索路径平均不超过两次点击，页面响应保持在较低延迟。</p>
+        </div>
+        <div class="scene-card">
+            <h3>账户管理场景</h3>
+            <p>登录区、个人中心与安全设置集中放置在页面右上区域。用户可进行密码更新、通知偏好调整及历史记录查看，操作流程均带有明确的步骤提示。</p>
+        </div>
+        <div class="scene-card">
+            <h3>内容浏览场景</h3>
+            <p>首页信息流按时间与热度排列，并辅以标签筛选。每条内容均配有简短摘要，点击后进入详情页，适合日常信息获取与跟踪。</p>
+        </div>
+    </div>
+
+    <!-- 常见说明摘要 (FAQ) -->
+    <div class="faq-summary">
+        <h2>常见说明摘要</h2>
+        <div class="faq-item">
+            <div class="faq-question">问：是否需要注册才能浏览大部分内容？</div>
+            <div class="faq-answer">无需注册即可访问公开页面，包括首页、分类列表及详情。部分个性化功能（如收藏、通知）需登录后使用。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">问：站内是否存在多个语言版本？</div>
+            <div class="faq-answer">当前以中文为主要界面语言，部分数据板块提供英文对照。语言切换入口位于页面底部工具栏。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">问：如何确认当前访问的是官方稳定入口？</div>
+            <div class="faq-answer">直接通过 <a href="https://main-web-williamhill.com">威廉希尔</a> 域名进入，避免使用第三方跳转链接。页面顶部始终显示站点标识与导航栏。</div>
+        </div>
+    </div>
+
+    <!-- 提示 -->
+    <div class="note">
+        <span>提示</span> 本介绍页仅用于站点结构与场景说明，不涉及具体操作引导或服务承诺。所有信息均基于公开可访问的界面内容整理。
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <span>© 威廉希尔 · 介绍页</span>
+        <span><a href="https://main-web-williamhill.com">威廉希尔</a> · 稳定入口</span>
+    </div>
+</div>
+</body>
+</html>
